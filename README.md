@@ -28,7 +28,7 @@ Add `event-listener` to the plugins section of your `.eslintrc` configuration fi
 
 ```json
 {
-    "extends": ["plugin:event-listeners/recommended"]
+    "extends": ["plugin:event-listeners/recommended"],
     "plugins": [
         "event-listener"
     ]
