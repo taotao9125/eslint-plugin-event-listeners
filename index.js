@@ -3,7 +3,6 @@
 'use strict';
 
 const allRules = {
-    'remove-event-listener': require('./lib/rules/remove-event-listener.js'),
     'remove-device-event-listener': require('./lib/rules/remove-device-event-listener')
 };
 
@@ -25,12 +24,7 @@ module.exports = {
     rules: allRules,
     configs: {
         recommended: {
-            rules: allRulesConfig,
-            globals: {
-                'Ext': false,
-                'QView': false,
-                'QComponent': false
-            },
+            rules: allRulesConfig
         }
     },
 };
