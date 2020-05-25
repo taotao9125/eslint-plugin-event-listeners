@@ -41,7 +41,6 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "event-listener/remove-event-listener": 2,
         "event-listener/remove-device-event-listener": 2
     }
 }
