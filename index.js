@@ -2,16 +2,30 @@
 
 'use strict';
 
+const allRules = {
+    'remove-event-listener': require('./lib/rules/remove-event-listener.js'),
+    'remove-device-event-listener': require('./lib/rules/remove-device-event-listener')
+};
+
+function configureAsError(rules) {
+    const result = {};
+    for (const key in rules) {
+        if (!rules.hasOwnProperty(key)) {
+            continue;
+        }
+        result['event-listener/' + key] = 2;
+    }
+    return result;
+}
+
+const allRulesConfig = configureAsError(allRules);
+
 module.exports = {
     deprecatedRules: {},
-    rules: {
-        'event-listener': require('./lib/rules/event-listener.js'),
-    },
+    rules: allRules,
     configs: {
         recommended: {
-            rules: {
-                'event-listeners/event-listener': 2
-            },
+            rules: allRulesConfig,
             globals: {
                 'Ext': false,
                 'QView': false,

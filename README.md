@@ -1,4 +1,4 @@
-# eslint-plugin-event-listeners
+# eslint-plugin-event-listener
 
 Check react-native memory leak by remind developer to remove any addEventListener in React-Native
 
@@ -12,17 +12,17 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-event-listeners`:
+Next, install `eslint-plugin-event-listener`:
 
 ```
 $ npm install eslint-plugin-event-listener --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-event-listeners` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-event-listener` globally.
 
 ## Usage
 
-Add `plugin:event-listeners/recommended` to the extends section of your `.eslintrc` configuration file.
+Add `plugin:event-listener/recommended` to the extends section of your `.eslintrc` configuration file.
 
 Add `event-listener` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
@@ -41,7 +41,8 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "event-listener/event-listener": 2
+        "event-listener/remove-event-listener": 2,
+        "event-listener/remove-device-event-listener": 2
     }
 }
 ```
