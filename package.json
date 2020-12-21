@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-event-listener",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "check react-native memory leak",
   "keywords": [
     "eslint",
@@ -12,7 +12,7 @@
   "scripts": {
     "test": "mocha tests --recursive"
   },
-  "repository": { 
+  "repository": {
     "type": "git",
     "url": "https://github.com/SinLucifer/eslint-plugin-event-listeners.git"
   },
