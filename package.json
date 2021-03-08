@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-event-listener",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "check react-native memory leak",
   "keywords": [
     "eslint",

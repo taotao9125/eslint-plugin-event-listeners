@@ -29,34 +29,35 @@ ruleTester.run("remove-event-listener", rule, {
     valid: [
         // give me some code that won't trigger a warning
         `
-            class C extends Component {
-                componentDidMount() {
-                    Dimensions.addEventListener('change', this.sizeChange);
-                }
-                componentWillUnmount() {
-                    Dimensions.removeEventListener('change', this.sizeChange);
-                }
+        class C extends Component {
+            componentDidMount() {
+               // BackHandler.addEventListener('hardwareBackPress', this.sizeChange.bind(this));
             }
+            componentWillUnmount() {
+                global.eventObj.removeAllListeners('FUWU_ORDER_LIST_SCROLL');
+            }
+        }
         `.trim()
     ],
 
     // bad case
     invalid: [
-        {
-            code: `
-                class C extends Component {
-                    componentDidMount() {
-                        BackHandler.addEventListener('hardwareBackPress', this.sizeChange.bind(this));
-                    }
-                    componentWillUnmount() {
-                        BackHandler.addEventListener('hardwareBackPress', this.sizeChange.bind(this));
-                    }
-                }
-            `.trim(),
-            errors: [{
-                message: "Fill me in.",
-                type: 'CallExpression'
-            }]
-        }
+        // {
+        //     code: `
+        //         class C extends Component {
+        //             componentDidMount() {
+        //                 BackHandler.addEventListener('hardwareBackPress', this.sizeChange.bind(this));
+        //             }
+        //             componentWillUnmount() {
+        //                 global.eventObj.removeAllListeners('FUWU_ORDER_LIST_SCROLL');
+        //                 BackHandler.addEventListener('hardwareBackPress', this.sizeChange.bind(this));
+        //             }
+        //         }
+        //     `.trim(),
+        //     errors: [{
+        //         message: "Fill me in.",
+        //         type: 'CallExpression'
+        //     }]
+        // }
     ]
 });
